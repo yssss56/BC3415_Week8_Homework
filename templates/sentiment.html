@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #ffeef8; /* Very light pink background */
+            margin: 0; /* Remove default margin */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #d81b60; /* Darker pink for title */
+        }
+
+        form {
+            margin-bottom: 20px; /* Space between form and result */
+            background-color: #f8bbd0; /* Light pink for form background */
+            padding: 20px; /* Padding around the form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        textarea {
+            width: 80%; /* Make textarea responsive */
+            max-width: 500px; /* Set max width */
+            height: 100px; /* Set height for better usability */
+            padding: 10px; /* Add padding for comfort */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #f06292; /* Light pink border */
+            resize: none; /* Disable resizing */
+            font-size: 1em; /* Increase font size for better readability */
+        }
+
+        input[type="submit"], .button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            background-color: #f50057; /* Button color */
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+        }
+
+        input[type="submit"]:hover, .button:hover {
+            background-color: #c51162; /* Darker shade on hover */
+        }
+
+        .back-button {
+            background-color: #f06292; /* Lighter pink for go back button */
+        }
+
+        .back-button:hover {
+            background-color: #ec407a; /* Darker shade on hover */
+        }
+
+        h2 {
+            margin-top: 20px; /* Space above result */
+            color: #d81b60; /* Darker pink for result */
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Sentiment Analysis</h1>
+    <form method="POST">
+        <textarea name="text" placeholder="Enter text here..."></textarea><br>
+        <input type="submit" value="Analyze">
+    </form>
+    
+    {% if result %}
+    <h2>Sentiment Result: {{ result }}</h2>
+    {% endif %}
+
+    <a href="/"><button class="button back-button">Go Back</button></a> <!-- Go back button -->
+</body>
+</html>
